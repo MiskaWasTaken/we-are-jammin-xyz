@@ -1,3 +1,4 @@
+
 <html>
 
 <head>
@@ -14,14 +15,8 @@
 
     <!-- how many nerds are actually using this site -->
     <!-- no, seriously, i refuse to believe people are actually sending each other this site -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C9GE0ECKBC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-C9GE0ECKBC');
-    </script>
+    <script defer data-domain="we-are-jammin.xyz" src="https://a.erisly.moe/js/script.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 
     <script>
         /*!
@@ -126,7 +121,10 @@
                     const time = video.currentTime - 13.166 - step * 0.500;
                     // const time = video.currentTime - 0 - step * 0.100;
                     if (time > 0) {
-                        if (step == 0) document.title = 'You just got jammed!';
+                        if (step == 0) {
+                            document.title = 'You just got jammed!';
+                            plausible('Jammed');
+                        }
                         const el = document.createElement('span');
                         el.textContent = memes[step];
                         data.appendChild(el);
